@@ -1,0 +1,27 @@
+
+
+<!-- Estructura HTML de componente song -->
+<div class="song" >
+
+  <div class="song-header">
+    <h2 class="song-title">{{song.title}}</h2>
+    <h4 class="song-subtitle">{{song.artist}}</h4>
+  </div>
+
+  <div class="song-body">
+    <ul class="song-detail">
+      <li class="song-detail-item"><strong>Album:</strong> {{song.album}}</li>
+      <li class="song-detail-item"><strong>Año:</strong> {{song.year}}</li>
+      <li class="song-detail-item"><strong>Géneros:</strong>
+        <ul>
+          <li class="song-detail-subitem" *ngFor="let genre of song.genres">
+            <i>{{genre}}</i>
+          </li>
+        </ul>
+      </li>
+      <li class="song-detail-item"><strong>Compositor:</strong> {{song.songwriter}}</li>
+      <li class="song-detail-item"><strong>Productor:</strong> {{song.producer}}</li>
+    </ul>
+  </div>
+</div>
+

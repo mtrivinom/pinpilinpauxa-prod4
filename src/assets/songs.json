@@ -1,0 +1,126 @@
+{
+
+"songsList": [
+  {
+    "id": 1,
+    "title": "Thriller",
+    "artist": "Michael Jackson",
+    "year": 1980,
+    "album": "Thriller",
+    "genres": ["Disco", "Pop", "Funk"],
+    "producer": "Quincy Jones",
+    "songwriter": "Rod Temperton",
+    "duration": "5:57",
+    "source": "Michael-Jackson-Thriller"
+  },
+  {
+    "id": 2,
+    "title": "Rolling in the Deep",
+    "artist": "Adele",
+    "year": 2011,
+    "album": "21",
+    "genres": ["Pop","Soul"],
+    "producer": "Paul Epworth",
+    "songwriter": "Adele Adkins",
+    "duration": "3:54",
+    "source": "Adele-Rolling-in-the-Deep"
+  },
+  {
+    "id": 3,
+    "title": "Blinding Lights",
+    "artist": "The Weeknd",
+    "year": 2019,
+    "album": "Blinding Lights",
+    "genres": ["Soul","Synthwave"],
+    "producer": "Max Martin",
+    "songwriter": "Abel Tesfaye",
+    "duration": "3:23",
+    "source": "The-Weeknd-Blinding-Lights"
+  },
+  {
+    "id": 4,
+    "title": "I Disagree",
+    "artist": "Poppy",
+    "year": 2020,
+    "album": "I Disagree",
+    "genres": ["Kawaii Metal"],
+    "producer": "Chirs Greatti",
+    "songwriter": "Zakk Cervini",
+    "duration": "3:12",
+    "source": "Poppy-I-Disagree"
+  },
+  {
+    "id": 5,
+    "title": "I Want Out",
+    "artist": "Helloween",
+    "year": 1988,
+    "album": "Keeper of the",
+    "genres": ["Pop-Rock"],
+    "producer": "Noise International",
+    "songwriter": "Kai Hansen",
+    "duration": "4:40",
+    "source": "Helloween-I-want-out"
+  },
+  {
+    "id": 6,
+    "title": "So Long",
+    "artist": "Abba",
+    "year": 1975,
+    "album": "Abba",
+    "genres": ["Pop-Rock"],
+    "producer": "Bjorn Ulvaeus",
+    "songwriter": "Benny Andersson",
+    "duration": "3:05",
+    "source": "So-Long"
+  },
+  {
+    "id": 7,
+    "title": "Somebody to love",
+    "artist": "Queen",
+    "year": 1976,
+    "album": "A Day at the",
+    "genres": ["Pop-Rock"],
+    "producer": "Queen",
+    "songwriter": "Freddie Mercury",
+    "duration": "5:09",
+    "source": "Queen-Somebody-To-Love"
+  },
+  {
+    "id": 8,
+    "title": "Poison",
+    "artist": "Alice Cooper",
+    "year": 1989,
+    "album": "Trash",
+    "genres": ["Hard Rock"],
+    "producer": "Straight",
+    "songwriter": "Poison",
+    "duration": "4:29",
+    "source": "Alice-Cooper-Poison"
+  },
+  {
+    "id": 9,
+    "title": "Hamaika Holako",
+    "artist": "Alaitz eta Maider",
+    "year": 1999,
+    "album": "Inshala",
+    "genres": ["Trikitixa"],
+    "producer": "Max Martin",
+    "songwriter": "Abel Tesfaye",
+    "duration": "4:15",
+    "source": "Hamaika-holako-Alaitz-eta-Maider"
+  },
+  {
+    "id": 10,
+    "title": "Save your tears",
+    "artist": "The Weeknd",
+    "year": 2020,
+    "album": "After Hours",
+    "genres": ["Soul", "R&B"],
+    "producer": "Max Martin",
+    "songwriter": "Abel Tesfaye",
+    "duration": "4:08",
+    "source": "The_Weeknd_Save_Your_Tears"
+  }
+]
+
+}

@@ -1,0 +1,69 @@
+
+/* Estilos minimos componente song-list */
+
+.header{
+  background-color: #3D0B61;
+  padding: 30px;
+}
+
+.footer{
+  background-color: #3D0B61;
+  padding: 59.5px;
+}
+
+a{
+  font-family: 'Roboto';
+  color: #EB9113;
+  font-size: 20px;
+  text-align: left;
+  text-decoration: none;
+}
+
+html{
+  background-color: #242424;
+}
+
+.center-peke{
+  background-color: #242424;
+  width: 50%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 310px;
+  margin-right: 200px;
+}
+
+tbody{
+  background-color: #EB9113;
+}
+
+th{
+  font-family: 'Roboto';
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+td{
+  font-family: 'Roboto';
+  color: #000000;
+  font-size: 16px;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+b{
+  font-family: 'Roboto';
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+b:hoover{
+  background-color: #3D0B61;
+}
+
+.finder-song{
+  width: 355px;
+}

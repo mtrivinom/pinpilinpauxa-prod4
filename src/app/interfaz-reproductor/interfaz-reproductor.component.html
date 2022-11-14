@@ -1,0 +1,22 @@
+<section class="reproductor">
+  <div class="d-flex justify-content-between">
+    <div class="w-75">
+      <button (click)="play()" class='button play'><img width="40px" src="../../assets/img/play.png"></button>
+      <button (click)="pause()" class='button pause'><img width="40px" src="../../assets/img/pause.png"></button>
+      <button (click)="stop()" class='button stop'><img width="45px" src="../../assets/img/stop.png"></button>
+    </div>
+    <div class="volume-wrapper">
+      <div class="volume"><span>Volume</span></div>
+      <input class="slider" type="range" min="0" max="1" [attr.value]="currentVolume" step="any"
+        (input)="updateVolume($event)">
+    </div>
+  </div>
+  <div class="justify-content-center">
+    <input class="slider" type="range" [ngModel]="currentTime" min="0" max="100" [attr.value]="currentTime"
+      (input)="updateTime($event)">
+    <div class="timeline">
+      <div class="time"><span>tiempo total</span>{{formatedDuration}}</div>
+      <div class="time"><span>tiempo restante</span>{{timeLeft}}</div>
+    </div>
+  </div>
+</section>
