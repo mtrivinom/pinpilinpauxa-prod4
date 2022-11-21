@@ -11,6 +11,8 @@ export class SongListComponent implements OnInit {
   //se declara la variable songs que es de tipo array de Song (Song[])
   songs: Song[];
 
+  filteredSongs: Song[] = [];
+
   textSong: string = '';
 
   artists:string[];
@@ -35,12 +37,21 @@ export class SongListComponent implements OnInit {
     /**
      * Llamamos al servicio
      */
+    let allGenres: string [] = []
     this.songsServicesService.getJSON().subscribe(data => {
         this.songs = data.songsList;
-        this.songs.forEach(s => {
-          this.artists.push(s.artist);
-          this.generes.push(s.genres.toString());
+        this.filteredSongs = this.songs;
+        this.songs.forEach(song => {
+          this.artists.push(song.artist);
+
+          song.genres.forEach(genre => {
+            allGenres.push(genre);
+          });
+
         });
+
+        // Eliminamos los elementos duplicados del array de géneros
+        this.generes = [ ...new Set(allGenres) ];
     });
 
 
@@ -51,6 +62,22 @@ export class SongListComponent implements OnInit {
   setSong(song:Song){
 
     this.songSelected = song;
+  }
+
+  filterBy(){
+    if(this.artistSelected === '' && this.genereSelected === '' ){
+      return this.filteredSongs = this.songs
+    }
+    else if(this.artistSelected === '' && this.genereSelected !== ''){
+      return this.filteredSongs = this.songs.filter(song => song.genres.toString().toLowerCase().includes(this.genereSelected.toLowerCase()))
+    }
+    else if(this.artistSelected !== '' && this.genereSelected === ''){
+      return this.filteredSongs = this.songs.filter(song => song.artist.toLowerCase().includes(this.artistSelected.toLowerCase()))
+    }
+    else{
+      return this.filteredSongs = this.songs.filter(song => song.genres.toString().toLowerCase().includes(this.genereSelected.toLowerCase()) && song.artist.toLowerCase().includes(this.artistSelected.toLowerCase()))
+    }
+
   }
 
 }
