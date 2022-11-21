@@ -64,24 +64,6 @@ export class SongListComponent implements OnInit {
     this.songSelected = song;
   }
 
-  filterByArtist(){
-    if(this.artistSelected == '' ){
-      return this.filteredSongs = this.songs
-    }
-    else{
-      return this.filteredSongs = this.songs.filter(song => song.artist.toLowerCase().includes(this.artistSelected.toLowerCase()))
-    }
-  }
-
-  filterByGenre(){
-    if(this.genereSelected == '' ){
-      return this.filteredSongs = this.songs
-    }
-    else{
-      return this.filteredSongs = this.songs.filter(song => song.genres.toString().toLowerCase().includes(this.genereSelected.toLowerCase()))
-    }
-  }
-
   filterBy(){
     if(this.artistSelected === '' && this.genereSelected === '' ){
       return this.filteredSongs = this.songs
