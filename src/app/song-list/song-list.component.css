@@ -32,26 +32,6 @@ html{
   margin-right: 200px;
 }
 
-tbody{
-  background-color: #EB9113;
-}
-
-th{
-  font-family: 'Roboto';
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-td{
-  font-family: 'Roboto';
-  color: #000000;
-  font-size: 16px;
-  font-weight: normal;
-  text-decoration: none;
-}
-
 b{
   font-family: 'Roboto';
   color: #ffffff;
@@ -67,3 +47,38 @@ b:hoover{
 .finder-song{
   width: 355px;
 }
+
+th{
+  font-family: 'Roboto';
+  color: #3D0B61;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  border: 4px solid;
+  border-color: #B47CE0;
+  background-color: #A96ED8;
+}
+
+td{
+  font-family: 'Roboto';
+  color: #000000;
+  font-size: 16px;
+  font-weight: normal;
+  text-decoration: none;
+  text-align: center;
+  height: 70px;
+  width: 40%;
+  border: 4px solid;
+  border-color: #B47CE0;
+  background-color: #A96ED8;
+}
+
+input {
+  width: 200px;
+  padding: 0.5px;
+  color:#ECE3F2;
+  font-size: 22px;
+}
+
+
