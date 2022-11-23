@@ -10,6 +10,8 @@ import { FiltroPipe } from './song-list/pipes/filtro.pipe';
 import { FormsModule } from '@angular/forms';
 import { InterfazReproductorComponent } from './interfaz-reproductor/interfaz-reproductor.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
