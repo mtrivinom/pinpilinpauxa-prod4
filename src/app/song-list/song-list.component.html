@@ -45,6 +45,9 @@
     </div>
 
     <table class="table table-bordered table-striped">
+
+      <mat-list>
+
       <thead>
         <tr>
           <th>Título</th>
@@ -56,15 +59,19 @@
 
       <tbody>
           <tr *ngFor="let s of filteredSongs | filtro: textSong">
-          <td>
-            <b (click)="setSong(s)">{{ s.title }}</b>
-          </td>
-          <td>{{ s.artist }}</td>
-          <td>{{ s.genres }}</td>
-          <td>{{ s.duration }}</td>
-        </tr>
+            <td>
+              <b (click)="setSong(s)">{{ s.title }}</b>
+            </td>
+            <td>{{ s.artist }}</td>
+            <td>{{ s.genres }}</td>
+            <td>{{ s.duration }}</td>
+          </tr>
       </tbody>
+
+      </mat-list>
+
     </table>
+
   </div>
 
   <div *ngIf="songSelected.id > 0">
