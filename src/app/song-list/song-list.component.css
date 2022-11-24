@@ -1,63 +1,160 @@
 
 /* Estilos minimos componente song-list */
 
-.header{
-  background-color: #3D0B61;
-  padding: 30px;
+h2{
+  color: #ffffff;
+  font-family: 'Open Sans bold';
+  font-size: 60px;
+  font-weight: normal;
+  text-decoration: none;
+  text-align: left;
+}
+
+h3{
+  color: #ffffff;
+  font-family: 'Open Sans bold';
+  font-size: 30px;
+  font-weight: normal;
+  text-decoration: none;
+  text-align: left;
+}
+
+h4{
+  color: #ffffff;
+  font-family: 'Open Sans regular';
+  font-size: 18px;
+  font-weight: normal;
+  text-decoration: none;
+  text-align: left;
+}
+
+h5{
+  color: #ffffff;
+  font-family: 'Open Sans regular';
+  font-size: 18px;
+  font-weight: normal;
+  text-decoration: none;
+  text-align: center;
+}
+
+h6{
+  color: #ffffff;
+  font-family: 'Open Sans bold';
+  font-size: 30px;
+  font-weight: normal;
+  text-decoration: none;
+  text-align: right;
+}
+
+h7{
+  color: #ffffff;
+  font-family: 'Open Sans semibold';
+  font-size: 30px;
+  font-weight: normal;
+  text-decoration: none;
+  text-align: left;
+}
+
+h8{
+  color: #ffffff;
+  font-family: 'Open Sans regular';
+  font-size: 22px;
+  font-weight: normal;
+  text-decoration: none;
+  text-align: left;
+}
+
+html {
+  background-color: #4D4D4D;
+  height: 100%;
+}
+
+span{
+  bottom: 0;
+  width:100%;
+  text-align: center;
+  color: #FFFF;
+  font-family: 'Open Sans regular';
+  font-style: normal;
+  font-size: 18px;
+  padding: 5px;
+}
+
+.body{
+  background-color: #4D4D4D;
+  font-family: 'Open Sans regular';
+  color: #FFFF;
+  padding: 0px;
+  margin-top: -50px;
 }
 
 .footer{
-  background-color: #3D0B61;
-  padding: 59.5px;
+  background-color: #3C3C3C;
+  height: 50px;
+  padding: 0px;
 }
 
-a{
-  font-family: 'Roboto';
-  color: #EB9113;
-  font-size: 20px;
-  text-align: left;
-  text-decoration: none;
+.header{
+  background-color: #4D4D4D;
+  height: 150px;
+  padding: 50px;
 }
 
-html{
-  background-color: #242424;
+.img-fluid{
+  background-image: url(img/logo.png);
+  background-color: #4D4D4D;
+}
+
+.header-image {
+  background-image: url(img/cascos.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  background-size: cover;
 }
 
 .center-peke{
-  background-color: #242424;
-  width: 50%;
+  background-color: #4D4D4D;
+  width: 90%;
   margin-top: 50px;
+  margin-bottom: -17px;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.finder{
+  background-color: #3C3C3C;
+  text-decoration-color: #F87D51;
+  font-family: 'Open Sans regular';
+  font-size: 18px;
+  width: 380px;
+  margin-top: 40px;
   margin-bottom: 50px;
-  margin-left: 310px;
-  margin-right: 200px;
+  margin-left: 0px;
 }
 
-b{
-  font-family: 'Roboto';
+.col-2{
+  margin-top: -100px;
+  margin-bottom: 50px;
+}
+
+.col-12{
+  border:none;
+}
+
+tabla{
+  border-top: none;
+}
+
+tr{
+  background-color: #4D4D4D;
   color: #ffffff;
-  font-size: 16px;
-  font-weight: normal;
-  text-decoration: none;
-}
-
-b:hoover{
-  background-color: #3D0B61;
-}
-
-.finder-song{
-  width: 355px;
-}
-
-th{
-  font-family: 'Roboto';
-  color: #3D0B61;
-  font-size: 20px;
+  font-family: 'Open Sans regular';
   font-weight: bold;
   text-decoration: none;
-  text-align: center;
-  border: 4px solid;
-  border-color: #B47CE0;
-  background-color: #A96ED8;
+  text-align: left;
+  border-color: transparent;
+  border-top: none;
 }
 
 td{
@@ -66,12 +163,13 @@ td{
   font-size: 16px;
   font-weight: normal;
   text-decoration: none;
-  text-align: center;
+  text-align: left;
   height: 70px;
   width: 40%;
-  border: 4px solid;
-  border-color: #B47CE0;
-  background-color: #A96ED8;
+  border: 2px solid;
+  border-color: #ffffff;
+  background-color: #4D4D4D;
+  border-color: transparent;
 }
 
 input {
