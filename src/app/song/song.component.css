@@ -1,46 +1,29 @@
 
 /* Estilos minimos componente song */
 
-.song-header{
-  background-color: #2C063D;
-  padding: 15px;
-}
-
 .song-body{
-  background-color: #3D0B61;
-  padding: 25px;
+  background-color: #3C3C3C;
+  padding: 50px;
 }
 
-.song-detail-item{
-  margin: 10px 0;
-}
-
-h4{
-  font-family: 'Roboto';
-  color: #E8D3B5;
-  font-size: 20px;
-  text-align: center;
-}
-
-h2{
-  font-family: 'Roboto';
-  color: #E8D3B5;
-  font-size: 24px;
-  text-align: center;
-  font-weight: bold;
+tabla{
+  list-style-type: none;
+  color: #ffffff;
+  font-family: 'Open Sans regular';
+  font-size: 30px;
+  font-weight: normal;
+  text-decoration: none;
+  text-align: left;
 }
 
 li{
-  font-family: 'Roboto';
-  color: #E8D3B5;
-  font-size: 16px;
-  text-align: center;
-}
-
-a{
-  font-family: 'Roboto';
-  color: #EB9113;
-  font-size: 20px;
-  text-align: left;
+  list-style-type: none;
+  color: #ffffff;
+  font-family: 'Open Sans regular';
+  font-size: 30px;
+  font-weight: normal;
   text-decoration: none;
+  text-align: left;
+  margin-bottom: 20px;
+  margin-left: 500px;
 }

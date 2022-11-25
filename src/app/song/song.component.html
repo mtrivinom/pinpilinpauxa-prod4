@@ -1,27 +1,18 @@
 
 
 <!-- Estructura HTML de componente song -->
+
 <div class="song" >
-
-  <div class="song-header">
-    <h2 class="song-title">{{song.title}}</h2>
-    <h4 class="song-subtitle">{{song.artist}}</h4>
-  </div>
-
-  <div class="song-body">
+  <mat-list class="tabla">
     <ul class="song-detail">
-      <li class="song-detail-item"><strong>Album:</strong> {{song.album}}</li>
-      <li class="song-detail-item"><strong>Año:</strong> {{song.year}}</li>
-      <li class="song-detail-item"><strong>Géneros:</strong>
-        <ul>
-          <li class="song-detail-subitem" *ngFor="let genre of song.genres">
-            <i>{{genre}}</i>
-          </li>
-        </ul>
-      </li>
-      <li class="song-detail-item"><strong>Compositor:</strong> {{song.songwriter}}</li>
-      <li class="song-detail-item"><strong>Productor:</strong> {{song.producer}}</li>
+      <li class="song-detail-item"><strong>Título:</strong><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong> {{song.title}}</li>
+      <li class="song-detail-item"><strong>Autor:</strong><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong> {{song.artist}}</li>
+      <li class="song-detail-item"><strong>Año:</strong><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong> {{song.year}}</li>
+      <li class="song-detail-item"><strong>Disco:</strong><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong> {{song.album}}</li>
+      <li class="song-detail-item" *ngFor="let genre of song.genres"><strong>Género:</strong><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>{{genre}}</li>
+      <li class="song-detail-item"><strong>Compositor/a:</strong><strong>&nbsp;</strong> {{song.songwriter}}</li>
+      <li class="song-detail-item"><strong>Productor/a:</strong><strong>&nbsp;&nbsp;&nbsp;&nbsp;</strong> {{song.producer}}</li>
     </ul>
-  </div>
+  </mat-list>
 </div>
 

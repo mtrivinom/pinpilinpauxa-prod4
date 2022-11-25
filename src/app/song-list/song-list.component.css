@@ -80,6 +80,15 @@ span{
   padding: 5px;
 }
 
+p{
+  color: #ffffff;
+  font-family: 'Open Sans regular';
+  font-size: 18px;
+  font-weight: normal;
+  text-decoration: none;
+  text-align: center;
+}
+
 .body{
   background-color: #4D4D4D;
   font-family: 'Open Sans regular';
@@ -101,12 +110,12 @@ span{
 }
 
 .img-fluid{
-  background-image: url(img/logo.png);
+  background-image: url(src/assets/img/logo.png);
   background-color: #4D4D4D;
 }
 
 .header-image {
-  background-image: url(img/cascos.png);
+  background-image: url(src/assets/img/cascos.png);
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
@@ -117,7 +126,7 @@ span{
   background-color: #4D4D4D;
   width: 90%;
   margin-top: 50px;
-  margin-bottom: -17px;
+  margin-bottom: 60px;
   margin-left: 60px;
   margin-right: 60px;
 }
@@ -129,47 +138,8 @@ span{
   font-size: 18px;
   width: 380px;
   margin-top: 40px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   margin-left: 0px;
-}
-
-.col-2{
-  margin-top: -100px;
-  margin-bottom: 50px;
-}
-
-.col-12{
-  border:none;
-}
-
-tabla{
-  border-top: none;
-}
-
-tr{
-  background-color: #4D4D4D;
-  color: #ffffff;
-  font-family: 'Open Sans regular';
-  font-weight: bold;
-  text-decoration: none;
-  text-align: left;
-  border-color: transparent;
-  border-top: none;
-}
-
-td{
-  font-family: 'Roboto';
-  color: #000000;
-  font-size: 16px;
-  font-weight: normal;
-  text-decoration: none;
-  text-align: left;
-  height: 70px;
-  width: 40%;
-  border: 2px solid;
-  border-color: #ffffff;
-  background-color: #4D4D4D;
-  border-color: transparent;
 }
 
 input {
@@ -179,4 +149,47 @@ input {
   font-size: 22px;
 }
 
+.col-2{
+  margin-top: -50px;
+  margin-bottom: 50px;
+  margin-left: -85px;
+}
 
+tr{
+  background-color: #4D4D4D;
+  color: #ffffff;
+  font-family: 'Open Sans regular';
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: left;
+  border: 0px solid;
+}
+
+th{
+  background-color: #4D4D4D;
+  color: #ffffff;
+  font-family: 'Open Sans regular';
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: left;
+  border-color: #ffffff;
+}
+
+td{
+  height: 40px;
+  width: 40%;
+  background-color: #4D4D4D;
+  color: #ffffff;
+  font-family: 'Open Sans regular';
+  font-size: 18px;
+  font-weight: normal;
+  text-decoration: none;
+  text-align: left;
+  border: 2px solid;
+  border-color: #ffffff;
+  border-collapse: collapse;
+  border-left: none;
+  border-right: none
+}
