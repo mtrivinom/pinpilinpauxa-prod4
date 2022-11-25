@@ -1,22 +1,31 @@
 <!-- Estructura HTML de componente song-list -->
 
 <html>
+
   <div class="header">
-    <a routerLink="/songlist">PLAYSOUND</a>
+      <a routerLink="/songlist">
+        <img class="img-fluid" src="logo.png" alt="Logo">
+      </a>
   </div>
+
+  <div class="header-image">
+    <img class="img-fluid" src="cascos.png" alt="Fondo">
+  </div>
+
+  <div class="body">
+
   <div class="center-peke">
-    <div>
-      <input
+
+    <mat-form-field class="finder">
+      <input matInput
         type="text"
         class="finder-song"
         placeholder="Comienza a escuchar tus canciones favoritas"
         [(ngModel)]="textSong"
         name="textSong"
       />
-    </div>
-    <div>&nbsp;</div>
-
-
+    </mat-form-field>
+    
     <div class="container text-center">
       <div class="row">
         <div class="col-7"></div>
@@ -28,7 +37,6 @@
             </option>
           </select>
         </div>
-
         <div class="col-2 ms-3">
           <select [(ngModel)]="genereSelected" (change)="filterBy()" name="filtrar" id="filtrar">
             <option value="">Selecciona Género</option>
@@ -44,27 +52,31 @@
       </div>
     </div>
 
-    <table class="table table-bordered table-striped">
+    <table class="table">
+      <mat-list class="tabla">
       <thead>
         <tr>
-          <th>Título</th>
-          <th>Artista</th>
-          <th>Género</th>
-          <th>Duración</th>
+          <th>TÍTULO</th>
+          <th>ARTISTA</th>
+          <th>GÉNERO</th>
+          <th>DURACIÓN</th>
         </tr>
       </thead>
-
       <tbody>
           <tr *ngFor="let s of filteredSongs | filtro: textSong">
-          <td>
-            <b (click)="setSong(s)">{{ s.title }}</b>
-          </td>
-          <td>{{ s.artist }}</td>
-          <td>{{ s.genres }}</td>
-          <td>{{ s.duration }}</td>
-        </tr>
+            <td>
+              <b (click)="setSong(s)">{{ s.title }}</b>
+            </td>
+            <td>{{ s.artist }}</td>
+            <td>{{ s.genres }}</td>
+            <td>{{ s.duration }}</td>
+          </tr>
       </tbody>
+      </mat-list>
     </table>
+
+  </div>
+
   </div>
 
   <div *ngIf="songSelected.id > 0">
@@ -72,7 +84,9 @@
     <app-interfaz-reproductor [source]="songSelected.source"></app-interfaz-reproductor>
   </div>
 
-  <footer>
+  <div class="footer">
+    <div>&nbsp;</div>
     <p>Pinpilinpauxa © 2022</p>
-  </footer>
+  </div>
+
 </html>
