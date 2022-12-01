@@ -16,41 +16,43 @@
 
   <div class="center-peke">
 
-    <mat-form-field class="finder">
-      <input matInput
-        type="text"
-        class="finder-song"
-        placeholder="Comienza a escuchar tus canciones favoritas"
-        [(ngModel)]="textSong"
-        name="textSong"
-      />
-    </mat-form-field>
-    
-    <div class="container text-center">
-      <div class="row">
-        <div class="col-7"></div>
-        <div class="col-2 me-3">
-          <select [(ngModel)]="artistSelected" (change)="filterBy()" name="filtrar" id="filtrar">
-            <option value="">Selecciona Artista</option>
-            <option *ngFor="let artist of artists" value="{{ artist }}">
-              {{ artist }}
-            </option>
-          </select>
+    <section class="seccion-filtros">
+      <mat-form-field class="finder">
+        <input matInput
+          type="text"
+          class="finder-song"
+          placeholder="Comienza a escuchar tus canciones favoritas"
+          [(ngModel)]="textSong"
+          name="textSong"
+        />
+      </mat-form-field>
+
+      <div class="container text-center filtros">
+        <div class="row">
+          <div class="col-7"></div>
+          <div class="col-2 me-3">
+            <select [(ngModel)]="artistSelected" (change)="filterBy()" name="filtrar" id="filtrar">
+              <option value="">Selecciona Artista</option>
+              <option *ngFor="let artist of artists" value="{{ artist }}">
+                {{ artist }}
+              </option>
+            </select>
+          </div>
+          <div class="col-2 ms-3">
+            <select [(ngModel)]="genereSelected" (change)="filterBy()" name="filtrar" id="filtrar">
+              <option value="">Selecciona Género</option>
+              <option *ngFor="let genere of generes" value="{{ genere }}">
+                {{ genere }}
+              </option>
+            </select>
+          </div>
+          <div class="col-1"></div>
         </div>
-        <div class="col-2 ms-3">
-          <select [(ngModel)]="genereSelected" (change)="filterBy()" name="filtrar" id="filtrar">
-            <option value="">Selecciona Género</option>
-            <option *ngFor="let genere of generes" value="{{ genere }}">
-              {{ genere }}
-            </option>
-          </select>
+        <div class="row">
+          <div class="col-12">&nbsp;</div>
         </div>
-        <div class="col-1"></div>
       </div>
-      <div class="row">
-        <div class="col-12">&nbsp;</div>
-      </div>
-    </div>
+    </section>
 
     <table class="table">
       <mat-list class="tabla">

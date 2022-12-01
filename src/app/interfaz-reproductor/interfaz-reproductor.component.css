@@ -1,6 +1,9 @@
-section{
+.reproductor{
   padding: 20px;
   background-color: #F87D51;
+  position: fixed;
+  bottom: 50px;
+  width: 100%;
 }
 
 .button.play {

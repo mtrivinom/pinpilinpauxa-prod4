@@ -1,6 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Song } from './song';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-song',
@@ -13,7 +14,7 @@ export class SongComponent implements OnInit {
  // songs: Song[] =  new SongsServices().songsList;;
   //songId: string | null = '';
   //listeners: string = '';
-
+  genres = new FormControl();
 /**
  * Utilizamos el provided ActivatedRoute para recoger el id de la url
  * @param activatedRoute provee acceso a la información relacionadas con las rutas
