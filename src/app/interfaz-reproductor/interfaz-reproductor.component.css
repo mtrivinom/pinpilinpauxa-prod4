@@ -1,30 +1,36 @@
-section{
+.reproductor{
   padding: 20px;
   background-color: #F87D51;
+  position: fixed;
+  bottom: 50px;
+  width: 100%;
 }
 
-.button.play {
+.button.play, .button.pause, .button.stop {
   margin-right: 2%;
   border-color: rgba(0, 0, 0, 0);
   background-color: rgba(0, 0, 0, 0);
+  order: 1;
 }
-
-.button.pause{
-  margin-right: 2%;
-  border-color: rgba(0, 0, 0, 0);
-  background-color: rgba(0, 0, 0, 0);
+.mat-icon-button{
+  width:90px;
+  height: 90px;
+  justify-content:center;
 }
-
-.button.stop{
-  margin-right: 2%;
-  border-color: rgba(0, 0, 0, 0);
-  background-color: rgba(0, 0, 0, 0);
-}
-
 .timeline{
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.buttons{
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+.volume-wrapper{
+  display:flex;
+  align-items: center;
+  order: 2;
 }
 
 .time, .volume{
@@ -32,9 +38,8 @@ section{
    color: #ffffff;
 }
 
-.volume-wrapper{
-  width: 100%;
-  max-width: 300px;
+.mat-progress-bar {
+  margin: 20px 0;
 }
 
 .slider {
@@ -51,14 +56,6 @@ section{
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #ffffff;
-  cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
   width: 20px;
   height: 20px;
   border-radius: 50%;

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 
+
 @Component({
   selector: 'app-interfaz-reproductor',
   templateUrl: './interfaz-reproductor.component.html',
@@ -96,7 +97,7 @@ export class InterfazReproductorComponent implements OnInit, OnChanges {
    * Función para actualizar el volumen
    */
   updateVolume(e: any){
-    this.audio.volume = e.target.value;
+    this.audio.volume = e.value;
     this.currentVolume = this.audio.volume;
   }
 

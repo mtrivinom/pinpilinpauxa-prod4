@@ -1,29 +1,40 @@
 
 /* Estilos minimos componente song */
 
-.song-body{
+/*.song-body{
   background-color: #3C3C3C;
   padding: 50px;
 }
-
-tabla{
+*/
+.song{
+  background-color: #3C3C3C;
+  padding: 25px 30px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 200px;
+  box-sizing: inherit;
+}
+.detalle{
   list-style-type: none;
   color: #ffffff;
   font-family: 'Open Sans regular';
-  font-size: 30px;
+  font-size: 22px;
   font-weight: normal;
   text-decoration: none;
   text-align: left;
+
 }
 
 li{
   list-style-type: none;
   color: #ffffff;
   font-family: 'Open Sans regular';
-  font-size: 30px;
+  font-size: 18px;
   font-weight: normal;
   text-decoration: none;
-  text-align: left;
-  margin-bottom: 20px;
-  margin-left: 500px;
+}
+.song-detail-item{
+  font-family: 'Open Sans regular';
+  font-size: 18px;
 }

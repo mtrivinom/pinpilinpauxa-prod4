@@ -3,15 +3,47 @@
 <!-- Estructura HTML de componente song -->
 
 <div class="song" >
-  <mat-list class="tabla">
+  <mat-list class="dealle">
     <ul class="song-detail">
-      <li class="song-detail-item"><strong>Título:</strong><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong> {{song.title}}</li>
-      <li class="song-detail-item"><strong>Autor:</strong><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong> {{song.artist}}</li>
-      <li class="song-detail-item"><strong>Año:</strong><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong> {{song.year}}</li>
-      <li class="song-detail-item"><strong>Disco:</strong><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong> {{song.album}}</li>
-      <li class="song-detail-item" *ngFor="let genre of song.genres"><strong>Género:</strong><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>{{genre}}</li>
-      <li class="song-detail-item"><strong>Compositor/a:</strong><strong>&nbsp;</strong> {{song.songwriter}}</li>
-      <li class="song-detail-item"><strong>Productor/a:</strong><strong>&nbsp;&nbsp;&nbsp;&nbsp;</strong> {{song.producer}}</li>
+      <li class="song-detail-item">
+        <mat-form-field class="middle-width">
+        <mat-label>Título</mat-label>
+        <input matInput [(ngModel)]="song.title">
+      </mat-form-field></li>
+      <li class="song-detail-item">
+        <mat-form-field class="middle-width">
+          <mat-label>Autor</mat-label>
+          <input matInput [(ngModel)]="song.artist">
+        </mat-form-field>
+      <li class="song-detail-item">
+        <mat-form-field class="middle-width">
+          <mat-label>Año</mat-label>
+          <input matInput [(ngModel)]="song.year">
+        </mat-form-field>
+      </li>
+      <li class="song-detail-item">
+        <mat-form-field class="middle-width">
+          <mat-label>Disco</mat-label>
+          <input matInput [(ngModel)]="song.album">
+        </mat-form-field>
+      <li class="song-detail-item">
+        <mat-form-field>
+          <mat-label  class="middle-width">Género</mat-label>
+          <mat-select [formControl]="genres" multiple>
+            <mat-option *ngFor="let genre of song.genres" [value]="genre">{{genre}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </li>
+      <li class="song-detail-item">
+        <mat-form-field class="middle-width">
+          <mat-label>Compositor/a</mat-label>
+          <input matInput [(ngModel)]="song.songwriter">
+        </mat-form-field>
+      <li class="song-detail-item">
+        <mat-form-field class="middle-width">
+          <mat-label>Productor/a</mat-label>
+          <input matInput [(ngModel)]="song.producer">
+        </mat-form-field>
     </ul>
   </mat-list>
 </div>

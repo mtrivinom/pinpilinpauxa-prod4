@@ -67,6 +67,7 @@ h8{
 html {
   background-color: #4D4D4D;
   height: 100%;
+  width: 100%;
 }
 
 span{
@@ -94,13 +95,20 @@ p{
   font-family: 'Open Sans regular';
   color: #FFFF;
   padding: 0px;
-  margin-top: -50px;
+  margin-top: 0px;
+  min-height:100vh;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .footer{
   background-color: #3C3C3C;
   height: 50px;
+  width: 100%;
   padding: 0px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
 }
 
 .header{
@@ -110,8 +118,7 @@ p{
 }
 
 .img-fluid{
-  background-image: url(src/assets/img/logo.png);
-  background-color: #4D4D4D;
+ background-color: #4D4D4D;
 }
 
 .header-image {
@@ -125,10 +132,7 @@ p{
 .center-peke{
   background-color: #4D4D4D;
   width: 90%;
-  margin-top: 50px;
-  margin-bottom: 60px;
-  margin-left: 60px;
-  margin-right: 60px;
+  margin: 50px 60px;
 }
 
 .finder{
@@ -136,10 +140,31 @@ p{
   text-decoration-color: #F87D51;
   font-family: 'Open Sans regular';
   font-size: 18px;
+  height: 70px;
   width: 380px;
-  margin-top: 40px;
-  margin-bottom: 30px;
-  margin-left: 0px;
+  margin: 40px 0 30px 0;
+  padding-inline: 10px;
+  order: 0;
+  }
+
+.seccion-filtros{
+  display: flex;
+
+  flex-flow: row wrap ;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.filtros{
+  order: 1;
+  margin: 10px 0 45px;
+}
+
+.filtro-artista {
+  order: 2;
+}
+.filtro-genero {
+  order: 3;
 }
 
 input {
@@ -150,9 +175,7 @@ input {
 }
 
 .col-2{
-  margin-top: -50px;
-  margin-bottom: 50px;
-  margin-left: -85px;
+  margin: -50px -85px 50px 0;
 }
 
 tr{
@@ -192,4 +215,10 @@ td{
   border-collapse: collapse;
   border-left: none;
   border-right: none
+}
+
+.clicable:hover{
+  color: #F87D51;
+  cursor: pointer;
+
 }
