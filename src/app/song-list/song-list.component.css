@@ -144,9 +144,28 @@ p{
   width: 380px;
   margin: 40px 0 30px 0;
   padding-inline: 10px;
+  order: 0;
   }
 
+.seccion-filtros{
+  display: flex;
 
+  flex-flow: row wrap ;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.filtros{
+  order: 1;
+  margin: 10px 0 45px;
+}
+
+.filtro-artista {
+  order: 2;
+}
+.filtro-genero {
+  order: 3;
+}
 
 input {
   width: 200px;
@@ -196,4 +215,10 @@ td{
   border-collapse: collapse;
   border-left: none;
   border-right: none
+}
+
+.clicable:hover{
+  color: #F87D51;
+  cursor: pointer;
+
 }

@@ -16,7 +16,7 @@
 
   <div class="center-peke">
 
-    <section class="seccion-filtros">
+    <section class="seccion-filtros flex-container">
       <mat-form-field class="finder">
         <input matInput
           type="text"
@@ -27,29 +27,22 @@
         />
       </mat-form-field>
 
-      <div class="container text-center filtros">
-        <div class="row">
-          <div class="col-7"></div>
-          <div class="col-2 me-3">
-            <select [(ngModel)]="artistSelected" (change)="filterBy()" name="filtrar" id="filtrar">
-              <option value="">Selecciona Artista</option>
-              <option *ngFor="let artist of artists" value="{{ artist }}">
-                {{ artist }}
-              </option>
-            </select>
-          </div>
-          <div class="col-2 ms-3">
-            <select [(ngModel)]="genereSelected" (change)="filterBy()" name="filtrar" id="filtrar">
-              <option value="">Selecciona Género</option>
-              <option *ngFor="let genere of generes" value="{{ genere }}">
-                {{ genere }}
-              </option>
-            </select>
-          </div>
-          <div class="col-1"></div>
+      <div class="d-flex filtros">
+        <div class="filtro-artista">
+          <select [(ngModel)]="artistSelected" (change)="filterBy()" name="filtrar" id="filtrar">
+            <option value="">Selecciona Artista</option>
+            <option *ngFor="let artist of artists" value="{{ artist }}">
+              {{ artist }}
+            </option>
+          </select>
         </div>
-        <div class="row">
-          <div class="col-12">&nbsp;</div>
+        <div class="filtro-genero">
+          <select [(ngModel)]="genereSelected" (change)="filterBy()" name="filtrar" id="filtrar">
+            <option value="">Selecciona Género</option>
+            <option *ngFor="let genere of generes" value="{{ genere }}">
+              {{ genere }}
+            </option>
+          </select>
         </div>
       </div>
     </section>
@@ -66,8 +59,8 @@
       </thead>
       <tbody>
           <tr *ngFor="let s of filteredSongs | filtro: textSong">
-            <td>
-              <b (click)="setSong(s)">{{ s.title }}</b>
+            <td class="clicable">
+              <b (click)="setSong(s)" >{{ s.title }}</b>
             </td>
             <td>{{ s.artist }}</td>
             <td>{{ s.genres }}</td>
