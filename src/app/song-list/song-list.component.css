@@ -67,6 +67,7 @@ h8{
 html {
   background-color: #4D4D4D;
   height: 100%;
+  width: 100%;
 }
 
 span{
@@ -94,9 +95,10 @@ p{
   font-family: 'Open Sans regular';
   color: #FFFF;
   padding: 0px;
-  margin-top: -50px;
-  min-height:90vh;
+  margin-top: 0px;
+  min-height:100vh;
   box-sizing: border-box;
+  width: 100%;
 }
 
 .footer{

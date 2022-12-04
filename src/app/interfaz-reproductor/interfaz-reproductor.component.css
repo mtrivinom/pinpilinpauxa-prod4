@@ -6,24 +6,16 @@
   width: 100%;
 }
 
-.button.play {
+.button.play, .button.pause, .button.stop {
   margin-right: 2%;
   border-color: rgba(0, 0, 0, 0);
   background-color: rgba(0, 0, 0, 0);
 }
-
-.button.pause{
-  margin-right: 2%;
-  border-color: rgba(0, 0, 0, 0);
-  background-color: rgba(0, 0, 0, 0);
+.mat-icon-button{
+  width:90px;
+  height: 90px;
+  justify-content:center;
 }
-
-.button.stop{
-  margin-right: 2%;
-  border-color: rgba(0, 0, 0, 0);
-  background-color: rgba(0, 0, 0, 0);
-}
-
 .timeline{
   display: flex;
   justify-content: space-between;
@@ -38,6 +30,10 @@
 .volume-wrapper{
   width: 100%;
   max-width: 300px;
+  margin: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .slider {
@@ -67,4 +63,7 @@
   border-radius: 50%;
   background: #ffffff;
   cursor: pointer;
+}
+.mat-progress-bar{
+  margin: 10px 0;
 }

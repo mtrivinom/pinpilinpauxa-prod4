@@ -1,22 +1,32 @@
 <section class="reproductor">
   <div class="d-flex justify-content-between">
+    <div></div>
     <div class="w-75">
-      <button (click)="play()" class='button play'><img width="40px" src="../../assets/img/play.png"></button>
-      <button (click)="pause()" class='button pause'><img width="40px" src="../../assets/img/pause.png"></button>
-      <button (click)="stop()" class='button stop'><img width="45px" src="../../assets/img/stop.png"></button>
+      <button mat-icon-button (click)="play()" class='button play'><img width="40px" src="../../assets/img/play.png"></button>
+      <button mat-icon-button (click)="pause()" class='button pause'><img width="40px" src="../../assets/img/pause.png"></button>
+      <button mat-icon-button (click)="stop()" class='button stop'><img width="45px" src="../../assets/img/stop.png"></button>
     </div>
     <div class="volume-wrapper">
       <div class="volume"><span>Volume</span></div>
-      <input class="slider" type="range" min="0" max="1" [attr.value]="currentVolume" step="any"
-        (input)="updateVolume($event)">
+
+      <mat-slider (change)="updateVolume($event)" step="0.01" min="0" max="1" [value]="currentVolume" color="primary" >
+
+        <input matSliderThumb [(ngModel)]="currentVolume" >
+      </mat-slider>
+
     </div>
   </div>
   <div class="justify-content-center">
-    <input class="slider" type="range" [ngModel]="currentTime" min="0" max="100" [attr.value]="currentTime"
+    <mat-progress-bar mode="determinate" value="{{currentTime}}" color="primary" > </mat-progress-bar>
+
+    <!-- ANTIGUO REPRODUCTOR SLIDER DETECTA EL INPUT PARA CAMBIAR DE MINUTO LA CANCIÓN
+      <input class="slider" type="range" [ngModel]="currentTime" min="0" max="100" [attr.value]="currentTime"
       (input)="updateTime($event)">
+    -->
+
     <div class="timeline">
-      <div class="time"><span>tiempo total</span>{{formatedDuration}}</div>
-      <div class="time"><span>tiempo restante</span>{{timeLeft}}</div>
+      <div class="time"><span><!--tiempo total--> </span>{{formatedDuration}}</div>
+      <div class="time"><span><!--tiempo restante--> </span>{{timeLeft}}</div>
     </div>
   </div>
 </section>
