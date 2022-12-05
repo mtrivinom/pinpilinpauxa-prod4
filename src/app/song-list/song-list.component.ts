@@ -52,11 +52,15 @@ export class SongListComponent implements OnInit {
 
         // Eliminamos los elementos duplicados del array de géneros
         this.generes = [ ...new Set(allGenres) ];
+
+    this.generes = ["All"].concat(this.generes);
     });
 
 
     this.artists = Array.from(new Set(this.artists));
     this.generes = Array.from(new Set(this.generes));
+
+    this.artists = ["All"].concat(this.artists);
   }
 
   setSong(song:Song){
@@ -66,6 +70,12 @@ export class SongListComponent implements OnInit {
 
   filterBy(){
     if(this.artistSelected === '' && this.genereSelected === '' ){
+      return this.filteredSongs = this.songs
+    }
+    else if (this.artistSelected === 'All' && this.genereSelected === '' ){
+      return this.filteredSongs = this.songs
+    }
+    else if (this.artistSelected === '' && this.genereSelected === 'All' ){
       return this.filteredSongs = this.songs
     }
     else if(this.artistSelected === '' && this.genereSelected !== ''){
