@@ -2,22 +2,27 @@
 
 <html>
 
-  <div class="header">
-      <a routerLink="/songlist">
-        <img class="img-fluid" src="../../assets/img/logo.png" alt="Logo">
-      </a>
-  </div>
+  <header>
 
-  <div class="header-image">
-    <img class="img-fluid" src="../../assets/img/cascos.png" alt="Fondo">
-  </div>
+    <div class="header">
+        <a routerLink="/songlist">
+          <img class="img-fluid" src="../../assets/img/logo.png" alt="Logo">
+        </a>
+    </div>
 
-  <div class="body">
+    <div class="header-image">
+      <div class="gradient"></div>
+      <h6 class="title-head">Listen to all music</h6>
+      <img class="img-fluid fondo-header" src="../../assets/img/cascos.png" alt="Fondo">
+    </div>
+  </header>
+
+  <body>
 
   <div class="center-peke">
 
     <section class="seccion-filtros flex-container">
-      <mat-form-field class="finder">
+      <mat-form-field class="finder" color="accent">
         <input matInput
           type="text"
           class="finder-song"
@@ -27,8 +32,7 @@
         />
       </mat-form-field>
 
-      <div class="d-flex filtros">
-        <div class="filtro-artista">
+      <div class="d-flex filtros">        <div class="filtro-artista">
           <select [(ngModel)]="artistSelected" (change)="filterBy()" name="filtrar" id="filtrar">
             <option value="">Selecciona Artista</option>
             <option *ngFor="let artist of artists" value="{{ artist }}">
@@ -72,16 +76,16 @@
 
   </div>
 
-  </div>
+  </body>
 
   <div *ngIf="songSelected.id > 0">
     <app-song [song]="songSelected"></app-song>
     <app-interfaz-reproductor [source]="songSelected.source"></app-interfaz-reproductor>
   </div>
 
-  <div class="footer">
+  <footer>
     <div>&nbsp;</div>
     <p>Pinpilinpauxa © 2022</p>
-  </div>
+  </footer>
 
 </html>

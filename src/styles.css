@@ -1,1 +1,33 @@
+html {
+  background-color: #4D4D4D;
+  height: 100%;
+  width: 100%;
+}
 
+body{
+  background-color: #4D4D4D;
+  font-family: 'Open Sans regular';
+  color: #FFFF;
+  min-height:100vh;
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+  z-index: 20;
+}
+
+footer{
+  background-color: #3C3C3C;
+  height: 50px;
+  width: 100%;
+  padding: 0px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 30;
+}
+
+header{
+  background-color: #3C3C3C;
+  height: 10%;
+  width: 100%;
+}
