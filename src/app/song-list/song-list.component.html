@@ -22,7 +22,7 @@
   <div class="center-peke">
 
     <section class="seccion-filtros flex-container">
-      <mat-form-field class="finder" color="accent">
+      <mat-form-field class="finder" color="warn">
         <input matInput
           type="text"
           class="finder-song"
@@ -33,6 +33,26 @@
       </mat-form-field>
 
       <div class="d-flex filtros">
+        <mat-form-field appearance="fill" color="warn" class="filtro-artista">
+          <mat-label>Selecciona Artista</mat-label>
+          <mat-select [(value)]="artistSelected" (change)="filterBy()" name="filtrar" id="filtrar">
+            <mat-option>--</mat-option>
+            <mat-option *ngFor="let artist of artists" [value]="artist">
+              {{artist}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" color="warn" class="filtro-genero" >
+          <mat-label>Selecciona Género</mat-label>
+          <mat-select [(ngModel)]="genereSelected" (change)="filterBy()" name="filtrar" id="filtrar">
+            <mat-option>--</mat-option>
+            <mat-option *ngFor="let genere of generes" [value]="genere">
+              {{genere}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      <!--
         <div class="filtro-artista">
           <select [(ngModel)]="artistSelected" (change)="filterBy()" name="filtrar" id="filtrar">
             <option value="">Selecciona Artista</option>
@@ -49,6 +69,7 @@
             </option>
           </select>
         </div>
+      -->
       </div>
     </section>
 
