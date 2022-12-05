@@ -32,7 +32,8 @@
         />
       </mat-form-field>
 
-      <div class="d-flex filtros">        <div class="filtro-artista">
+      <div class="d-flex filtros">
+        <div class="filtro-artista">
           <select [(ngModel)]="artistSelected" (change)="filterBy()" name="filtrar" id="filtrar">
             <option value="">Selecciona Artista</option>
             <option *ngFor="let artist of artists" value="{{ artist }}">
