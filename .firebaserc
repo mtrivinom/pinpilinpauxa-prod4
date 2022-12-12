@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "pinpilinpauxa-p4": {
+      "hosting": {
+        "pinpilinpauxa-prod4": [
+          "pinpilinpauxa-p4"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "pinpilinpauxa-p4"
+  }
+}

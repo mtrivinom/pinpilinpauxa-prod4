@@ -172,12 +172,17 @@ input {
   margin: -50px -85px 50px 0;
 }
 
+.clicable:hover{
+  color: #F87D51;
+  cursor: pointer;
+}
+
 tr{
   background-color: #4D4D4D;
   color: #ffffff;
   font-family: 'Open Sans regular';
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 12px;
+  font-weight: none;
   text-decoration: none;
   text-align: left;
   border: 0px solid;
@@ -185,13 +190,13 @@ tr{
 
 th{
   background-color: #4D4D4D;
-  color: #ffffff;
+  color: #ff0000;
   font-family: 'Open Sans regular';
   font-size: 18px;
   font-weight: bold;
-  text-decoration: none;
+  text-decoration: underline;
   text-align: left;
-  border-color: #ffffff;
+  border-color: #ff0000;
 }
 
 td{
@@ -211,8 +216,9 @@ td{
   border-right: none
 }
 
-.clicable:hover{
-  color: #F87D51;
-  cursor: pointer;
-
+mat-nav-list {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  width: 140%;
 }

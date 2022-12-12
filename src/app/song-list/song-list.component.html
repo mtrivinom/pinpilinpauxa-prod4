@@ -53,28 +53,22 @@
       </div>
     </section>
 
-    <table class="table">
-      <mat-list class="tabla">
-      <thead>
-        <tr>
-          <th>TÍTULO</th>
-          <th>ARTISTA</th>
-          <th>GÉNERO</th>
-          <th>DURACIÓN</th>
-        </tr>
-      </thead>
-      <tbody>
+    <mat-nav-list class="table">
+          <th>
+            <mat-list-item class="horizontal-mat-list-item">TÍTULO</mat-list-item>
+            <mat-list-item class="horizontal-mat-list-item">ARTISTA</mat-list-item>
+            <mat-list-item class="horizontal-mat-list-item">GÉNERO</mat-list-item>
+            <mat-list-item class="horizontal-mat-list-item">DURACIÓN</mat-list-item>
+          </th>
           <tr *ngFor="let s of filteredSongs | filtro: textSong">
-            <td class="clicable">
+            <mat-list-item class="clicable">
               <b (click)="setSong(s)" >{{ s.title }}</b>
-            </td>
-            <td>{{ s.artist }}</td>
-            <td>{{ s.genres }}</td>
-            <td>{{ s.duration }}</td>
+            </mat-list-item>
+            <mat-list-item>{{ s.artist }}</mat-list-item>
+            <mat-list-item>{{ s.genres }}</mat-list-item>
+            <mat-list-item>{{ s.duration }}</mat-list-item>
           </tr>
-      </tbody>
-      </mat-list>
-    </table>
+    </mat-nav-list>
 
   </div>
 
