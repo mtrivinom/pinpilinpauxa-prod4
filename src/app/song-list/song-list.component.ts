@@ -1,24 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { SongsServicesService } from '../Services/songs-services.service';
 import { Song } from '../song/song';
-
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
-import { provideAuth,getAuth } from '@angular/fire/auth';
-import { provideDatabase,getDatabase } from '@angular/fire/database';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-import { provideFunctions,getFunctions } from '@angular/fire/functions';
-import { provideMessaging,getMessaging } from '@angular/fire/messaging';
-import { providePerformance,getPerformance } from '@angular/fire/performance';
-import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
-import { provideStorage,getStorage } from '@angular/fire/storage';
+//import { SongsServicesService } from '../Services/songs-services.service';
+import { SongslistService } from '../Services/songslist.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-song-list',
@@ -43,6 +27,7 @@ export class SongListComponent implements OnInit {
 
   songSelected : Song;
 
+  /*
   constructor( private songsServicesService : SongsServicesService) {
 
     this.songs =[];
@@ -50,11 +35,20 @@ export class SongListComponent implements OnInit {
     this.generes=[];
     this.songSelected = new Song();
   }
+  */
 
+  constructor( private songslistService : SongslistService) {
+
+    this.songs =[];
+    this.artists=[];
+    this.generes=[];
+    this.songSelected = new Song();
+  }
+
+  /*
+    Llamamos al servicio
   ngOnInit(): void {
-    /**
-     * Llamamos al servicio
-     */
+
     let allGenres: string [] = []
     this.songsServicesService.getJSON().subscribe(data => {
         this.songs = data.songsList;
@@ -74,15 +68,37 @@ export class SongListComponent implements OnInit {
     this.generes = ["All"].concat(this.generes);
     });
 
-
     this.artists = Array.from(new Set(this.artists));
     this.generes = Array.from(new Set(this.generes));
 
     this.artists = ["All"].concat(this.artists);
   }
+  */
+
+  
+  ngOnInit(): void {
+    let allGenres: string [] = []
+    this.songslistService.getSong().subscribe(data => {
+        this.filteredSongs = this.songs;
+        this.songs.forEach(song => {
+          this.artists.push(song.artist);
+          song.genres.forEach(genre => {
+            allGenres.push(genre);
+          });
+        });
+        this.generes = [ ...new Set(allGenres) ];
+    this.generes = ["All"].concat(this.generes);
+    });
+    this.artists = Array.from(new Set(this.artists));
+    this.generes = Array.from(new Set(this.generes));
+    this.artists = ["All"].concat(this.artists);
+  }
+
+  getSong(): void{
+    this.songslistService.getSong().subscribe(song => this.songs = song);
+  }
 
   setSong(song:Song){
-
     this.songSelected = song;
   }
 
