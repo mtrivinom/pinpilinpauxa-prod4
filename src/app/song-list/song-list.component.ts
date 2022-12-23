@@ -75,8 +75,11 @@ export class SongListComponent implements OnInit {
   }
   */
 
-  
+ 
   ngOnInit(): void {
+
+    /* ESTHER, CUANDO PUEDAS EDITA ESTE CÓDIGO 
+
     let allGenres: string [] = []
     this.songslistService.getSong().subscribe(data => {
         this.filteredSongs = this.songs;
@@ -97,6 +100,7 @@ export class SongListComponent implements OnInit {
   getSong(): void{
     this.songslistService.getSong().subscribe(song => this.songs = song);
   }
+
 
   setSong(song:Song){
     this.songSelected = song;
@@ -122,5 +126,7 @@ export class SongListComponent implements OnInit {
       return this.filteredSongs = this.songs.filter(song => song.genres.toString().toLowerCase().includes(this.genereSelected.toLowerCase()) && song.artist.toLowerCase().includes(this.artistSelected.toLowerCase()))
     }
 
+  }
+  */
   }
 }

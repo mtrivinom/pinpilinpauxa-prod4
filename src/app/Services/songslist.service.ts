@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { Song } from '../song/song';
+import { SongComponent } from '../song/song.component';
 import { SongListComponent } from '../song-list/song-list.component';
 
 import { AngularFireModule } from '@angular/fire/compat';
@@ -11,7 +12,9 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/compat/firestore';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
+import { CollectionReference, DocumentData, addDoc, collection, deleteDoc, doc, updateDoc } from 'firebase/firestore';
+import { Firestore, collectionData, docData } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -19,41 +22,28 @@ import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} 
 
 export class SongslistService {
 
-  private songCollection: AngularFirestoreCollection<any>;
+  private songCollection: CollectionReference<DocumentData>;
 
-  public song: any[] = [];
-
-  constructor(private afs: AngularFirestore) { 
-    this.songCollection = this.afs.collection('song');
+  constructor(private readonly firestore: Firestore) { 
+    this.songCollection = collection(this.firestore,'song');
   }
 
-  getSong(): Observable<Song[]>{
-    return this.afs.collection<Song>('song').valueChanges();
-}
+  getAll(): Observable<Song[]> {
+    return collectionData(this.songCollection, {
+      idField: 'title',
+    }) as Observable<Song[]>;
+  }
+
+  getSong() {
+  }
 
   insertSong(song: Song){
-    this.songCollection.add({
-      id: song.id,
-      title: song.title,
-      artist: song.artist,
-      year: song.year,
-      album: song.album,
-      genres: song.genres,
-      producer: song.producer,
-      songwriter: song.songwriter,
-      duration: song.duration,
-      language: song.language,
-      explicit: song.explicit,
-      source: song.source
-    });
   }
 
-  modifySong(song: Song){
-    return this.songCollection.doc(song.title).update(song);
+  modifySong(){
   }
 
-  deleteSong(song: Song){
-    return this.songCollection.doc(song.title).delete();
+  deleteSong(){
   }
 
 }
