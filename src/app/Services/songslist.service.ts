@@ -30,7 +30,7 @@ export class SongslistService {
 
   getAll(): Observable<Song[]> {
     return collectionData(this.songCollection, {
-      idField: 'title',
+      idField: 'id',
     }) as Observable<Song[]>;
   }
 

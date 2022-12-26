@@ -27,16 +27,6 @@ export class SongListComponent implements OnInit {
 
   songSelected : Song;
 
-  /*
-  constructor( private songsServicesService : SongsServicesService) {
-
-    this.songs =[];
-    this.artists=[];
-    this.generes=[];
-    this.songSelected = new Song();
-  }
-  */
-
   constructor( private songslistService : SongslistService) {
 
     this.songs =[];
@@ -77,20 +67,18 @@ export class SongListComponent implements OnInit {
 
  
   ngOnInit(): void {
-
-    /* ESTHER, CUANDO PUEDAS EDITA ESTE CÓDIGO 
-
     let allGenres: string [] = []
-    this.songslistService.getSong().subscribe(data => {
-        this.filteredSongs = this.songs;
-        this.songs.forEach(song => {
-          this.artists.push(song.artist);
-          song.genres.forEach(genre => {
-            allGenres.push(genre);
-          });
+    this.songslistService.getAll().subscribe(data => { console.log(data);
+      this.songs = data;
+      this.filteredSongs = this.songs;
+      this.songs.forEach(song => {
+        this.artists.push(song.artist);
+        song.genres.forEach(genre => {
+          allGenres.push(genre);
         });
-        this.generes = [ ...new Set(allGenres) ];
-    this.generes = ["All"].concat(this.generes);
+      });
+      this.generes = [ ...new Set(allGenres) ];
+      this.generes = ["All"].concat(this.generes);
     });
     this.artists = Array.from(new Set(this.artists));
     this.generes = Array.from(new Set(this.generes));
@@ -98,7 +86,7 @@ export class SongListComponent implements OnInit {
   }
 
   getSong(): void{
-    this.songslistService.getSong().subscribe(song => this.songs = song);
+    this.songslistService.getAll().subscribe(song => this.songs = song);
   }
 
 
@@ -127,6 +115,6 @@ export class SongListComponent implements OnInit {
     }
 
   }
-  */
+  
   }
-}
+
