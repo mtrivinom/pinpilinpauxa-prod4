@@ -23,7 +23,7 @@
   font-size: 22px;
   font-weight: normal;
   text-decoration: none;
-  text-align: left;
+  text-align: center;
 
 }
 
@@ -39,3 +39,7 @@ li{
   font-family: 'Open Sans regular';
   font-size: 18px;
 }
+.song-detail{
+  padding-left: 0;
+}
+

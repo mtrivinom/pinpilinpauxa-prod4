@@ -34,16 +34,10 @@ export class SongslistService {
     }) as Observable<Song[]>;
   }
 
-  getSong() {
+  updateSong(id: number, data: any){
+    const docRef: any = doc(this.firestore, `song/${id}`);
+    return updateDoc(docRef,data);
   }
 
-  insertSong(song: Song){
-  }
-
-  modifySong(){
-  }
-
-  deleteSong(){
-  }
 
 }

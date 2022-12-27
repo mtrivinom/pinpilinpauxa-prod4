@@ -2,49 +2,51 @@
 
 <!-- Estructura HTML de componente song -->
 
-<div class="song" >
-  <mat-list class="dealle">
+<form class="song" [formGroup]="myForm" (ngSubmit)="save()">
+  <mat-list class="detalle">
     <ul class="song-detail">
       <li class="song-detail-item">
         <mat-form-field class="middle-width" color="warn">
         <mat-label>Título</mat-label>
-        <input matInput [(ngModel)]="song.title">
+        <input matInput [(ngModel)]="song.title" formControlName="title">
       </mat-form-field></li>
       <li class="song-detail-item">
         <mat-form-field class="middle-width" color="warn">
           <mat-label>Autor</mat-label>
-          <input matInput [(ngModel)]="song.artist">
+          <input matInput [(ngModel)]="song.artist" formControlName="artist">
         </mat-form-field>
       <li class="song-detail-item">
         <mat-form-field class="middle-width" color="warn">
           <mat-label>Año</mat-label>
-          <input matInput [(ngModel)]="song.year">
+          <input matInput [(ngModel)]="song.year"formControlName="year">
         </mat-form-field>
       </li>
       <li class="song-detail-item">
         <mat-form-field class="middle-width" color="warn">
           <mat-label>Disco</mat-label>
-          <input matInput [(ngModel)]="song.album">
+          <input matInput [(ngModel)]="song.album"formControlName="album">
         </mat-form-field>
       <li class="song-detail-item">
         <mat-form-field color="warn">
           <mat-label  class="middle-width">Género</mat-label>
-          <mat-select [formControl]="genres" multiple>
-            <mat-option *ngFor="let genre of song.genres" [value]="genre">{{genre}}</mat-option>
+          <mat-select [(ngModel)]="song.genres" multiple formControlName="genres">
+            <mat-option *ngFor="let genre of generes" [value]="genre">{{genre}}</mat-option>
           </mat-select>
         </mat-form-field>
       </li>
       <li class="song-detail-item" >
         <mat-form-field class="middle-width" color="warn">
           <mat-label>Compositor/a</mat-label>
-          <input matInput [(ngModel)]="song.songwriter">
+          <input matInput [(ngModel)]="song.songwriter" formControlName="songwriter">
         </mat-form-field>
       <li class="song-detail-item">
         <mat-form-field class="middle-width" color="warn">
           <mat-label>Productor/a</mat-label>
-          <input matInput [(ngModel)]="song.producer">
+          <input matInput [(ngModel)]="song.producer" formControlName="producer">
         </mat-form-field>
     </ul>
+    <button mat-flat-button color="warn" type="submit">Save</button>
+
   </mat-list>
-</div>
+</form>
 

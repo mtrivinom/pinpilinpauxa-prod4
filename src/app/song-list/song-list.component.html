@@ -75,7 +75,7 @@
   </body>
 
   <div *ngIf="songSelected.id > 0">
-    <app-song [song]="songSelected"></app-song>
+    <app-song [song]="songSelected" [generes]="generes"></app-song>
     <app-interfaz-reproductor [source]="songSelected.source"></app-interfaz-reproductor>
   </div>
 

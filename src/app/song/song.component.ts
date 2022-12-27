@@ -1,7 +1,8 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Song } from './song';
-import {FormControl} from '@angular/forms';
+import {FormControl, FormGroup} from '@angular/forms';
+import {SongslistService } from '../Services/songslist.service';
 
 @Component({
   selector: 'app-song',
@@ -11,16 +12,28 @@ import {FormControl} from '@angular/forms';
 export class SongComponent implements OnInit {
  /* Declaración de variables/atributos necesarios **/
  @Input() song: Song;
+ @Input() generes: string[] = [];
+
  // songs: Song[] =  new SongsServices().songsList;;
   //songId: string | null = '';
   //listeners: string = '';
-  genres = new FormControl();
+
+  myForm = new FormGroup({
+    title: new FormControl(''),
+    artist: new FormControl(''),
+    year: new FormControl(''),
+    album: new FormControl(''),
+    genres: new FormControl(''),
+    producer: new FormControl(''),
+    songwriter: new FormControl(''),
+  })
+
 /**
  * Utilizamos el provided ActivatedRoute para recoger el id de la url
  * @param activatedRoute provee acceso a la información relacionadas con las rutas
  * de un componente
  */
-  constructor()
+  constructor(private songslistService: SongslistService)
     {
       this.song = new Song();
       /** Creamos una instancia de songServices que contiene el array de canciones */
@@ -44,5 +57,10 @@ export class SongComponent implements OnInit {
    // this.song = this.songs.find((item:Song) => item.id == Number(this.songId))!;
 
 
+  }
+  
+  save(){
+    this.songslistService.updateSong(this.song.id, this.myForm.value);
+    
   }
 }
