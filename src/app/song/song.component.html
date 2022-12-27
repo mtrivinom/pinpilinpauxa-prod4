@@ -46,7 +46,9 @@
         </mat-form-field>
     </ul>
     <button mat-flat-button color="warn" type="submit">Save</button>
-
+    <div class="alert alert-success mt-2" role="alert" *ngIf="showSaved">
+      ¡Guardado con éxito!
+    </div>
   </mat-list>
 </form>
 

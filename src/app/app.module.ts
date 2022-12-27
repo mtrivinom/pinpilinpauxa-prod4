@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatSliderModule} from '@angular/material/slider';
 
@@ -52,6 +53,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     MaterialModule,
     ReactiveFormsModule,
     MatButtonModule,
+    MatIconModule,
     MatSliderModule,
     MatProgressBarModule,
     AngularFireModule.initializeApp(environment.firebase),

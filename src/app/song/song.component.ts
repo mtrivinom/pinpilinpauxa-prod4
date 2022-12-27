@@ -28,6 +28,8 @@ export class SongComponent implements OnInit {
     songwriter: new FormControl(''),
   })
 
+  showSaved :boolean = false;
+
 /**
  * Utilizamos el provided ActivatedRoute para recoger el id de la url
  * @param activatedRoute provee acceso a la información relacionadas con las rutas
@@ -60,7 +62,10 @@ export class SongComponent implements OnInit {
   }
   
   save(){
-    this.songslistService.updateSong(this.song.id, this.myForm.value);
-    
+    this.songslistService.updateSong(this.song.id, this.myForm.value).then(()=>{
+      this.showSaved = true;
+      setTimeout(() => this.showSaved = false, 3000);
+    });
+
   }
 }
