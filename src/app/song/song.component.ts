@@ -28,6 +28,7 @@ export class SongComponent implements OnInit {
     songwriter: new FormControl(''),
   })
 
+  //etiqueta para el Timeout de guardado
   showSaved :boolean = false;
 
 /**
@@ -61,8 +62,10 @@ export class SongComponent implements OnInit {
 
   }
   
+  //Función para guardar el formulario
   save(){
     this.songslistService.updateSong(this.song.id, this.myForm.value).then(()=>{
+      //mensaje de guardado.
       this.showSaved = true;
       setTimeout(() => this.showSaved = false, 3000);
     });
