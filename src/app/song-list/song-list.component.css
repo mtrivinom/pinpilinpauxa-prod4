@@ -177,48 +177,6 @@ input {
   cursor: pointer;
 }
 
-tr{
-  background-color: #4D4D4D;
-  color: #ffffff;
-  font-family: 'Open Sans';
-  font-size: 12px;
-  font-weight: none;
-  text-decoration: none;
-  text-align: left;
-  border: 0px solid;
-}
-
-th{
-  background-color: #4D4D4D;
-  color: #ff0000;
-  font-family: 'Open Sans';
-  font-size: 18px;
-  font-weight: bold;
-  text-decoration: underline;
-  text-align: left;
-  border-color: #ff0000;
-}
-
-td{
-  height: 40px;
-  width: 40%;
-  background-color: #4D4D4D;
-  color: #ffffff;
-  font-family: 'Open Sans';
-  font-size: 18px;
-  font-weight: normal;
-  text-decoration: none;
-  text-align: left;
-  border: 2px solid;
-  border-color: #ffffff;
-  border-collapse: collapse;
-  border-left: none;
-  border-right: none
-}
-
-mat-nav-list {
-  display: flex;
-  flex-direction: row;
-  height: auto;
-  width: 140%;
+.song-list{
+  padding-bottom: 60px;
 }

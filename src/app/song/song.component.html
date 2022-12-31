@@ -1,14 +1,12 @@
+<!-- Formulario de datos Estructura HTML de componente song. -->
 
-
-<!-- Estructura HTML de componente song -->
-
-<form class="song" [formGroup]="myForm" (ngSubmit)="save()">
+<form class="song" [formGroup]="myForm" (ngSubmit)="update()">
   <mat-list class="detalle">
     <ul class="song-detail">
       <li class="song-detail-item">
         <mat-form-field class="middle-width" color="warn">
         <mat-label>Título</mat-label>
-        <input matInput [(ngModel)]="song.title" formControlName="title">
+        <input matInput required [(ngModel)]="song.title" formControlName="title">
       </mat-form-field></li>
       <li class="song-detail-item">
         <mat-form-field class="middle-width" color="warn">
@@ -45,7 +43,7 @@
           <input matInput [(ngModel)]="song.producer" formControlName="producer">
         </mat-form-field>
     </ul>
-    <button mat-flat-button color="warn" type="submit">Save</button>
+    <button mat-flat-button color="warn" type="submit" [disabled]="!myForm.valid">Save</button>
     <div class="alert alert-success mt-2" role="alert" *ngIf="showSaved">
       ¡Guardado con éxito!
     </div>

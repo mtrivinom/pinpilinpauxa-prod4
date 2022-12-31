@@ -1,7 +1,7 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Song } from './song';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {SongslistService } from '../Services/songslist.service';
 
 @Component({
@@ -19,13 +19,14 @@ export class SongComponent implements OnInit {
   //listeners: string = '';
 
   myForm = new FormGroup({
-    title: new FormControl(''),
+    title: new FormControl('',[Validators.required]),
     artist: new FormControl(''),
     year: new FormControl(''),
     album: new FormControl(''),
     genres: new FormControl(''),
     producer: new FormControl(''),
     songwriter: new FormControl(''),
+    duration: new FormControl(''),
   })
 
   //etiqueta para el Timeout de guardado
@@ -36,8 +37,7 @@ export class SongComponent implements OnInit {
  * @param activatedRoute provee acceso a la información relacionadas con las rutas
  * de un componente
  */
-  constructor(private songslistService: SongslistService)
-    {
+  constructor(private songslistService: SongslistService){
       this.song = new Song();
       /** Creamos una instancia de songServices que contiene el array de canciones */
       //this.songs =
@@ -63,7 +63,7 @@ export class SongComponent implements OnInit {
   }
   
   //Función para guardar el formulario
-  save(){
+  update(){
     this.songslistService.updateSong(this.song.id, this.myForm.value).then(()=>{
       //mensaje de guardado.
       this.showSaved = true;
@@ -71,4 +71,5 @@ export class SongComponent implements OnInit {
     });
 
   }
+  
 }

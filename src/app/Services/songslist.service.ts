@@ -39,5 +39,10 @@ export class SongslistService {
     return updateDoc(docRef,data);
   }
 
+  createSong(data: any){
+    /*const docRef: any = this.songCollection('song').doc(this.firestore, `song/${id}`);*/
+    return addDoc(this.songCollection, data);
+  }
+
 
 }

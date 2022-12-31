@@ -31,3 +31,7 @@ header{
   height: 10%;
   width: 100%;
 }
+
+.cdk-overlay-container{
+  z-index: 20020;
+}
