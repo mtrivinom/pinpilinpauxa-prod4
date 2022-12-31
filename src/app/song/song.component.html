@@ -7,12 +7,14 @@
         <mat-form-field class="middle-width" color="warn">
         <mat-label>Título</mat-label>
         <input matInput required [(ngModel)]="song.title" formControlName="title">
-      </mat-form-field></li>
+      </mat-form-field>
+      </li>
       <li class="song-detail-item">
         <mat-form-field class="middle-width" color="warn">
           <mat-label>Autor</mat-label>
           <input matInput [(ngModel)]="song.artist" formControlName="artist">
         </mat-form-field>
+      </li>
       <li class="song-detail-item">
         <mat-form-field class="middle-width" color="warn">
           <mat-label>Año</mat-label>
@@ -37,12 +39,20 @@
           <mat-label>Compositor/a</mat-label>
           <input matInput [(ngModel)]="song.songwriter" formControlName="songwriter">
         </mat-form-field>
+      </li>
       <li class="song-detail-item">
         <mat-form-field class="middle-width" color="warn">
           <mat-label>Productor/a</mat-label>
           <input matInput [(ngModel)]="song.producer" formControlName="producer">
         </mat-form-field>
-    </ul>
+      </li>
+      <li class="song-detail-item">
+        <mat-form-field class="middle-width" color="warn">
+            <mat-label>Duración</mat-label>
+            <input matInput [(ngModel)]="song.duration" formControlName="duration">
+        </mat-form-field>
+      </li>
+      </ul>
     <button mat-flat-button color="warn" type="submit" [disabled]="!myForm.valid">Save</button>
     <div class="alert alert-success mt-2" role="alert" *ngIf="showSaved">
       ¡Guardado con éxito!
