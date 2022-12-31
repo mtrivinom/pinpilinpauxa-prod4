@@ -39,8 +39,9 @@ export class SongslistService {
     return updateDoc(docRef,data);
   }
 
+  //Función para crear una canción en la base de datos con los datos nuevos del formulario del dialog
+
   createSong(data: any){
-    /*const docRef: any = this.songCollection('song').doc(this.firestore, `song/${id}`);*/
     return addDoc(this.songCollection, data);
   }
 
