@@ -13,8 +13,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatSliderModule} from '@angular/material/slider';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
@@ -34,6 +36,7 @@ import { provideMessaging,getMessaging } from '@angular/fire/messaging';
 import { providePerformance,getPerformance } from '@angular/fire/performance';
 import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import { DialogBoxComponent } from './dialog-box/dialog-box.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,8 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     SongComponent,
     SongListComponent,
     FiltroPipe,
-    InterfazReproductorComponent
+    InterfazReproductorComponent,
+    DialogBoxComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +56,9 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     MaterialModule,
     ReactiveFormsModule,
     MatButtonModule,
+    MatIconModule,
     MatSliderModule,
+    MatDialogModule,
     MatProgressBarModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAnalyticsModule,

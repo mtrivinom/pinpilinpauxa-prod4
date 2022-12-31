@@ -3,6 +3,8 @@ import { Song } from '../song/song';
 //import { SongsServicesService } from '../Services/songs-services.service';
 import { SongslistService } from '../Services/songslist.service';
 import { Observable } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
 
 @Component({
   selector: 'app-song-list',
@@ -26,15 +28,20 @@ export class SongListComponent implements OnInit {
   genereSelected :string = '';
 
   songSelected : Song;
+  
+  openedForm : boolean = false;
 
-  constructor( private songslistService : SongslistService) {
+  
+
+  constructor( private songslistService : SongslistService, public dialog : MatDialog) {
 
     this.songs =[];
     this.artists=[];
     this.generes=[];
     this.songSelected = new Song();
+        
   }
-
+  
   /*
     Llamamos al servicio
   ngOnInit(): void {
@@ -72,7 +79,9 @@ export class SongListComponent implements OnInit {
       this.songs = data;
       this.filteredSongs = this.songs;
       this.songs.forEach(song => {
-        this.artists.push(song.artist);
+        if(!this.artists.includes(song.artist)){
+          this.artists.push(song.artist);
+        }
         song.genres.forEach(genre => {
           allGenres.push(genre);
         });
@@ -115,6 +124,14 @@ export class SongListComponent implements OnInit {
     }
 
   }
+  
+  openDialog(){
+    this.dialog.open(DialogBoxComponent,{
+      width:'300px', 
+      height: '600px',
+    });
+  }
+
   
   }
 

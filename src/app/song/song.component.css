@@ -10,7 +10,7 @@
   background-color: #3C3C3C;
   padding: 25px 30px;
   position: relative;
-  margin: 100px 0;
+  margin-bottom: 100px;
   display: flex;
   justify-content: center;
   padding-bottom: 200px;
@@ -19,23 +19,27 @@
 .detalle{
   list-style-type: none;
   color: #ffffff;
-  font-family: 'Open Sans regular';
+  font-family: 'Open Sans';
   font-size: 22px;
   font-weight: normal;
   text-decoration: none;
-  text-align: left;
+  text-align: center;
 
 }
 
 li{
   list-style-type: none;
   color: #ffffff;
-  font-family: 'Open Sans regular';
+  font-family: 'Open Sans';
   font-size: 18px;
   font-weight: normal;
   text-decoration: none;
 }
 .song-detail-item{
-  font-family: 'Open Sans regular';
+  font-family: 'Open Sans';
   font-size: 18px;
 }
+.song-detail{
+  padding-left: 0;
+}
+

@@ -32,6 +32,8 @@
         />
       </mat-form-field>
 
+      <button class="d-flex" mat-raised-button color="warn" (click)="openDialog()">Añadir Canción</button>
+      
       <div class="d-flex filtros">
         <mat-form-field appearance="fill" color="warn" class="filtro-artista">
           <mat-label>Selecciona Artista</mat-label>
@@ -53,29 +55,29 @@
       </div>
     </section>
 
-    <mat-nav-list class="table">
-          <th>
-            <mat-list-item class="horizontal-mat-list-item">TÍTULO</mat-list-item>
-            <mat-list-item class="horizontal-mat-list-item">ARTISTA</mat-list-item>
-            <mat-list-item class="horizontal-mat-list-item">GÉNERO</mat-list-item>
-            <mat-list-item class="horizontal-mat-list-item">DURACIÓN</mat-list-item>
-          </th>
-          <tr *ngFor="let s of filteredSongs | filtro: textSong">
-            <mat-list-item class="clicable">
+    <mat-selection-list class="song-list" [multiple]="false">
+          <mat-list-item class="horizontal-mat-list-item" style="border-bottom:2px solid white">
+            <mat-list-item><strong>TÍTULO</strong></mat-list-item>
+            <mat-list-item><strong>ARTISTA</strong></mat-list-item>
+            <mat-list-item><strong>GÉNERO</strong></mat-list-item>
+            <mat-list-item><strong>DURACIÓN</strong></mat-list-item>
+          </mat-list-item>
+          <mat-list-item class="horizontal-mat-list-item border-bottom border-secondary clicable" *ngFor="let s of filteredSongs | filtro: textSong">
+            <mat-list-option>
               <b (click)="setSong(s)" >{{ s.title }}</b>
-            </mat-list-item>
+            </mat-list-option>
             <mat-list-item>{{ s.artist }}</mat-list-item>
             <mat-list-item>{{ s.genres }}</mat-list-item>
             <mat-list-item>{{ s.duration }}</mat-list-item>
-          </tr>
-    </mat-nav-list>
+          </mat-list-item>
+    </mat-selection-list>
 
   </div>
 
   </body>
 
   <div *ngIf="songSelected.id > 0">
-    <app-song [song]="songSelected"></app-song>
+    <app-song [song]="songSelected" [generes]="generes"></app-song>
     <app-interfaz-reproductor [source]="songSelected.source"></app-interfaz-reproductor>
   </div>
 

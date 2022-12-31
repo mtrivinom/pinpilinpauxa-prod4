@@ -6,9 +6,9 @@ html {
 
 body{
   background-color: #4D4D4D;
-  font-family: 'Open Sans regular';
+  font-family: 'Open Sans';
   color: #FFFF;
-  min-height:100vh;
+  min-height:50vh;
   box-sizing: border-box;
   width: 100%;
   position: relative;
@@ -30,4 +30,8 @@ header{
   background-color: #3C3C3C;
   height: 10%;
   width: 100%;
+}
+
+.cdk-overlay-container{
+  z-index: 20020;
 }

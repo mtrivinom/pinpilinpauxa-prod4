@@ -1,0 +1,42 @@
+
+.song{
+    background-color: #3C3C3C;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    box-sizing: inherit;
+    margin: 0;
+    padding: 20px;
+  }
+  .detalle{
+    list-style-type: none;
+    color: #ffffff;
+    font-family: 'Open Sans';
+    font-size: 22px;
+    font-weight: normal;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  li{
+    list-style-type: none;
+    color: #ffffff;
+    font-family: 'Open Sans';
+    font-size: 18px;
+    font-weight: normal;
+    text-decoration: none;
+  }
+  .song-detail-item{
+    font-family: 'Open Sans';
+    font-size: 18px;
+  }
+  .song-detail{
+    padding-left: 0;
+  }
+  .buttonsContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  

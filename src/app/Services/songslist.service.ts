@@ -27,23 +27,22 @@ export class SongslistService {
   constructor(private readonly firestore: Firestore) { 
     this.songCollection = collection(this.firestore,'song');
   }
-
+//función para mostrar los datos de la base de datos
   getAll(): Observable<Song[]> {
     return collectionData(this.songCollection, {
       idField: 'id',
     }) as Observable<Song[]>;
   }
-
-  getSong() {
+//Función para actualizar los datos de la base de datos con los datos nuevos del formulario
+  updateSong(id: number, data: any){
+    const docRef: any = doc(this.firestore, `song/${id}`);
+    return updateDoc(docRef,data);
   }
 
-  insertSong(song: Song){
+  createSong(data: any){
+    /*const docRef: any = this.songCollection('song').doc(this.firestore, `song/${id}`);*/
+    return addDoc(this.songCollection, data);
   }
 
-  modifySong(){
-  }
-
-  deleteSong(){
-  }
 
 }
