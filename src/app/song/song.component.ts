@@ -62,7 +62,7 @@ export class SongComponent implements OnInit {
 
   }
   
-  //Función para guardar el formulario
+  //Función para actualizar la BBDD con los datos del formulario
   update(){
     this.songslistService.updateSong(this.song.id, this.myForm.value).then(()=>{
       //mensaje de guardado.

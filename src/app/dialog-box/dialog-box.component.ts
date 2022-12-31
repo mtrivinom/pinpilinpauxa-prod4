@@ -61,11 +61,11 @@ export class DialogBoxComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    //Función para coger todos los generos que tenemos en la base de Datos para poderlos mostrar en el form
     let allGenres: string [] = []
     this.songslistService.getAll().subscribe(data => { console.log(data);
       this.songs = data;
-      this.songs.forEach(song => {
-        
+      this.songs.forEach(song => {        
         song.genres.forEach(genre => {
           allGenres.push(genre);
         });
